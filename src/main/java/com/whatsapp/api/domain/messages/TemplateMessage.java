@@ -2,6 +2,7 @@ package com.whatsapp.api.domain.messages;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.whatsapp.api.domain.templates.type.Category;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,9 @@ public class TemplateMessage {
     private String name;
     @JsonProperty("language")
     private Language language;
+
+    @JsonProperty("category")
+    private Category category;
 
     /**
      * Gets components.
@@ -75,6 +79,26 @@ public class TemplateMessage {
      */
     public TemplateMessage setLanguage(Language language) {
         this.language = language;
+        return this;
+    }
+
+    /**
+     * Gets category.
+     *
+     * @return the category
+     */
+    public Category getCategory() {
+        return category;
+    }
+
+    /**
+     * Sets category.
+     *
+     * @param category the category
+     * @return the category
+     */
+    public TemplateMessage setCategory(Category category) {
+        this.category = category;
         return this;
     }
 
